@@ -24,7 +24,7 @@ class EmailSearchPostRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:1|max:128',
+            'name' => 'required|string|min:3|max:128',
             'company' => 'required|string|min:1|max:128',
             'linkedInProfileUrl' => 'required|string|url',
         ];
