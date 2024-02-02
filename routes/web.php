@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmailSearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('email-search');
 });
+
+Route::get('/email-search', [EmailSearchController::class, 'searchForm'])->name('email-search');
+Route::post('/email-search', [EmailSearchController::class, 'search']);
